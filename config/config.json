@@ -1,12 +1,9 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
-    "database": "project2_development",
+    "password": "anderson",
+    "database": "matter",
     "host": "127.0.0.1",
     "dialect": "postgres"
-  },
-  "production": {
-    "use_env_variable": "DATABASE_URL"
   }
 }
