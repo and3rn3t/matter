@@ -7,18 +7,26 @@
   </head>
 
   <body>
-    <h1>Welcome to <%= user.name %>'s Profile Page</h1>
+    <h1>Welcome to <%= user.userId %>'s Profile Page</h1>
 
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="<%=user.name%>" /><br />
+      First Name:
+      <input type="text" name="fname" value="<%=user.fname%>" /><br />
       <br />
-      Username:
-      <input type="text" name="username" value="<%=user.username%>" />
+      Last Name:
+      <input type="text" name="lname" value="<%=user.lname%>" /><br />
       <br />
+      User ID:
+      <input type="text" name="userId" value="<%=user.userId%>" /><br />
       <br />
       Password:
       <input type="text" name="password" value="<%=user.password%>" /><br />
       <br />
+      Email Address:
+      <input type="text" name="email" value="<%=user.email%>" /><br />
+      <br />
+      Profile Picture:
+      <input type="url" name="profilePic" value="<%=user.profilePic%>" /><br />
       <input type="submit" value="Edit Profile" />
     </form>
     <br />
