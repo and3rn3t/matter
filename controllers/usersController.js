@@ -27,6 +27,27 @@ router.post("/", (req, res) => {
   });
 });
 
+// Login GET route
+router.get("/login", (req, res) => {
+  res.render("users/login.ejs");
+});
+
+// Login POST route
+router.post("/login", (req, res) => {
+  Users.findOne({
+    where: {
+      username: req.body.username,
+      password: req.body.password,
+    },
+  })
+    .then((loggedInPlayer) => {
+      res.redirect(`/users/${loggedInPlayer.id}`);
+    })
+    .catch((err) => {
+      res.redirect("/users");
+    });
+});
+
 // GET Friend Profile
 router.get("/:id", (req, res) => {
   console.log(req.user);
