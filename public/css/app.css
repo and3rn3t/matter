@@ -1,0 +1,18 @@
+body {
+  font-family: "Creepster", cursive;
+  color: red;
+  background-color:black;
+}
+
+ul {
+  list-style-type: none;
+  font-size: xx-large;
+}
+
+img {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 5px;
+  width: 450px;
+  display: inline-block;
+}

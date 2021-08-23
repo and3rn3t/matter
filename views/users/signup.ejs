@@ -3,20 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/app.css" />
   </head>
 
   <body>
     <h1>Sign Up</h1>
 
-    <form action="/auth/signup" method="POST">
-      Name: <input type="text" name="name" /><br />
+    <form action="/users/signup" method="POST">
+      First Name:
+      <input type="text" name="fname" /><br />
       <br />
-      Username: <input type="text" name="username" /> <br />
+      Last Name:
+      <input type="text" name="lname" /><br />
       <br />
-      Password: <input type="text" name="password" /><br />
+      User ID:
+      <input type="text" name="userId" /><br />
       <br />
-      <input type="submit" value="SignUp" />
+      Password:
+      <input type="text" name="password" /><br />
+      <br />
+      Email Address:
+      <input type="text" name="email" /><br />
+      <br />
+      Profile Picture:
+      <input type="url" name="profilePic" /><br />
+      <br />
+      About Me:
+      <input type="text" name="description" /><br />
+      <br />
+      <input type="submit" value="Sign Up" />
     </form>
   </body>
 </html>

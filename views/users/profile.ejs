@@ -4,12 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/app.css" />
   </head>
 
   <body>
     <h1>Welcome to <%= user.userId %>'s Profile Page</h1>
 
-    <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
+    <form action="/users/<%=user.id%>?_method=PUT" method="POST">
       First Name:
       <input type="text" name="fname" value="<%=user.fname%>" /><br />
       <br />
@@ -27,7 +34,15 @@
       <br />
       Profile Picture:
       <input type="url" name="profilePic" value="<%=user.profilePic%>" /><br />
-      <input type="submit" value="Edit Profile" />
+      <br />
+      About Me:
+      <input
+        type="text"
+        name="description"
+        value="<%=user.description%>"
+      /><br />
+      <br />
+      <input type="submit" value="Save Changes" />
     </form>
     <br />
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
@@ -35,6 +50,6 @@
     </form>
 
     <br /><br />
-    <a href="/">Back to Homepage</a>
+    <a href="/users">Back to Homepage</a>
   </body>
 </html>

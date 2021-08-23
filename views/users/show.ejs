@@ -11,21 +11,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/app.css" />
-    <title>Matter - Main</title>
+    <title>Matter - User Profile</title>
   </head>
   <body>
-    <h1>Welcome to Matter - the first social network for Monsters!!</h1>
-    <br /><br />
-    <a href="../users/signup">Sign Up</a>
-    <a href="../users/login">Log In</a>
-    <a href="../users">Back to Main</a><br /><br />
-    <ul class="users">
-      <% for( let i = 0; i < users.length; i++ ) { %>
-      <li>
-        <a href="/users/<%= users[i].id %>/"><%= users[i].fname %> <%= users[i].lname %></a><br />
-      </li>
-      <% } %>
-    </ul>
+    <h1>Show User Info - <%= user.fname %> <%= user.lname %></h1>
     <br />
+    <h2><%= user.description %></h2>
+    <img class="profile" src="<%=user.profilePic %>" /><br>
+    <a href="/users">Back to Main</a>
   </body>
 </html>
