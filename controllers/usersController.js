@@ -59,14 +59,7 @@ router.get("/:id", (req, res) => {
 
 // GET Own Profile (Edit)
 router.get("/edit/:id", (req, res) => {
-  Users.findByPk(req.params.id, {
-    include: [
-      {
-        model: Posts,
-        attributes: ["textContent", "picture"],
-      },
-    ],
-  }).then((userProfile) => {
+  Users.findByPk(req.params.id).then((userProfile) => {
     res.render("users/profile.ejs", {
       user: userProfile,
     });
