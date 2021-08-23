@@ -10,17 +10,17 @@ app.use(express.static("public"));
 // const jwt = require("jsonwebtoken");
 // const cookieParser = require("cookie-parser");
 
-// Log stuff
-// app.use((req, res, next) => {
-// 	let logStr = `${req.method} ${req.url}`;
+// Logging stuff
+app.use((req, res, next) => {
+	let logStr = `${req.method} ${req.url}`;
 
-// 	if(Object.keys(req.body).length !== 0) {
-// 		logStr += ` -- DATA: ${JSON.stringify(req.body)}`;
-// 	}
+	if(Object.keys(req.body).length !== 0) {
+		logStr += ` -- DATA: ${JSON.stringify(req.body)}`;
+	}
 
-// 	console.log(logStr);
-// 	next();
-// });
+	console.log(logStr);
+	next();
+});
 
 // const verifyToken = (req, res, next) => {
 //   let token = req.cookies.jwt;
