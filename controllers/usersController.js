@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 const Users = require("../models").Users;
-// const Groups = require("../models").Groups;
-// const Friendships = require("../models").Friendships;
-// const Posts = require("..models").Posts;
+// const Groups = require("../models").Group;
+// const Friendships = require("../models").Friendship;
+const Posts = require("../models").Posts;
 
 // GET Index route
 router.get("/", (req, res) => {
@@ -50,7 +50,6 @@ router.post("/login", (req, res) => {
 
 // GET Friend Profile
 router.get("/:id", (req, res) => {
-  console.log(req.user);
   Users.findByPk(req.params.id).then((userProfile) => {
     res.render("users/show.ejs", {
       user: userProfile,
