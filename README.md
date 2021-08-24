@@ -7,8 +7,8 @@ Use this section to describe your final project and perhaps any links to relevan
 
 ## Project Links
 
-- [github repo](https://github.com/and3rn3t/matter)
-- [deployment]()
+- [github repo](https://github.com/and3rn3t/monstr)
+- [Heroku Deployment](https://monstr-app.herokuapp.com)
 
 ## Wireframes
 
@@ -24,13 +24,15 @@ Define the the React components and the architectural design of your app.
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+- Allow users to explore others' profile pages and sign up for their own
+- Permit users to post profile pictures on their page
+- Use Users and Posts models to show profiles and user's posts to others
+- Connect application to a PostgreSQL backend database
 
 #### PostMVP EXAMPLE
 
-- Add localStorage or firebase for storage
+- Enable secure login and browsing via encrypted passwords and JWT
+- Allow users to join groups and make posts to groups to which they belong
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.

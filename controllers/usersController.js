@@ -76,7 +76,7 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// (Works) Delete User Profile Route
+// Delete User Profile Route
 router.delete("/:id", (req, res) => {
   Users.destroy({ where: { id: req.params.id } }).then(() => {
     res.redirect("/users");
