@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const router = express.Router();
 
 const app = express();
 const methodOverride = require("method-override");
@@ -22,15 +21,6 @@ app.use((req, res, next) => {
 
   console.log(logStr);
   next();
-});
-
-// GET Index route
-router.get("/", (req, res) => {
-  Users.findAll().then((user) => {
-    res.render("users/index.ejs", {
-      users: user,
-    });
-  });
 });
 
 // const verifyToken = (req, res, next) => {

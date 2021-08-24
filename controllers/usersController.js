@@ -6,6 +6,15 @@ const Users = require("../models").Users;
 // const Friendships = require("../models").Friendship;
 const Posts = require("../models").Posts;
 
+// GET Index route
+router.get("/", (req, res) => {
+  Users.findAll().then((user) => {
+    res.render("users/index.ejs", {
+      users: user,
+    });
+  });
+});
+
 // GET Signup Route
 router.get("/signup", (req, res) => {
   res.render("users/signup.ejs");
