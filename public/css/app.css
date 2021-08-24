@@ -1,12 +1,39 @@
 body {
   font-family: "Creepster", cursive;
   color: red;
-  background-color:black;
+  background-color: black;
 }
 
 ul {
+  font-size: 36px;
   list-style-type: none;
-  font-size: xx-large;
+  padding: 0;
+  margin: 0;
+}
+
+a:link,
+a:visited {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid yellow;
+  border-radius: 5px;
+}
+
+a:hover,
+a:active {
+  background-color: maroon;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
 }
 
 img {
@@ -15,4 +42,21 @@ img {
   padding: 5px;
   width: 450px;
   display: inline-block;
+}
+
+.actions {
+  text-align: center;
+}
+
+.buttonize {
+  background-color: maroon;
+  border: 1px solid darkgray;
+  border-radius: 3px;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
 }

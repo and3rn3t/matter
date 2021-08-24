@@ -53,5 +53,5 @@ app.use((req, res, next) => {
 app.use("/users", require("./controllers/usersController.js"));
 
 app.listen(3002, () => {
-  console.log("Nodemon listening");
+  console.log("LISTENING NOW!!!");
 });

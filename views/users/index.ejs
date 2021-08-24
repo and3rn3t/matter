@@ -15,16 +15,15 @@
   </head>
   <body>
     <h1>Welcome to Monstr - the first anti-social network for Evil!!</h1>
-    <br /><br />
-    <a href="../users/signup">Sign Up</a><br />
-    <a href="../users/login">Log In</a>
-    <br /><br />
+    <div class="actions"><a class="buttonize" href="../users/signup">Sign Up</a>
+    <a class="buttonize" href="../users/login">Log In</a></div>
+    <br /><br /><br />
     <ul class="users">
       <% for( let i = 0; i < users.length; i++ ) { %>
       <li>
         <a href="/users/<%= users[i].id %>/"
           ><%= users[i].fname %> <%= users[i].lname %></a
-        ><br />
+        ><br /><br />
       </li>
       <% } %>
     </ul>
