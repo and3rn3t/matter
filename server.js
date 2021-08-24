@@ -50,6 +50,6 @@ app.get("/", (req, res) => {
 // Import controllers
 app.use("/users", require("./controllers/usersController.js"));
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("LISTENING NOW!!!");
+app.listen(process.env.PORT, () => {
+  console.log("I AM LISTENING TO YOU NOW!!!");
 });
