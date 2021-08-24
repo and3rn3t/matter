@@ -12,14 +12,23 @@ app.use(express.static("public"));
 
 // Logging stuff
 app.use((req, res, next) => {
-	let logStr = `${req.method} ${req.url}`;
+  let logStr = `${req.method} ${req.url}`;
 
-	if(Object.keys(req.body).length !== 0) {
-		logStr += ` -- DATA: ${JSON.stringify(req.body)}`;
-	}
+  if (Object.keys(req.body).length !== 0) {
+    logStr += ` -- DATA: ${JSON.stringify(req.body)}`;
+  }
 
-	console.log(logStr);
-	next();
+  console.log(logStr);
+  next();
+});
+
+// GET Index route
+router.get("/", (req, res) => {
+  Users.findAll().then((user) => {
+    res.render("users/index.ejs", {
+      users: user,
+    });
+  });
 });
 
 // const verifyToken = (req, res, next) => {
