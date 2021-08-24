@@ -7,15 +7,15 @@ body {
 ul {
   font-size: 36px;
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding: 5px;
+  margin: 10px;
 }
 
 a:link,
 a:visited {
   background-color: red;
   color: white;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   border: 1px solid yellow;

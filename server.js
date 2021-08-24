@@ -53,6 +53,6 @@ app.use((req, res, next) => {
 // Import controllers
 app.use("/users", require("./controllers/usersController.js"));
 
-app.listen(3002, () => {
+app.listen(process.env.PORT, () => {
   console.log("LISTENING NOW!!!");
 });
