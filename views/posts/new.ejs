@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Monstr - New Post</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,19 +13,24 @@
   </head>
 
   <body>
-    <h1>Monstr - Login</h1>
+    <h1>Make a Monstr Post</h1>
     <div class="actions">
       <a class="buttonize" href="/users/signup">Sign Up</a>
+      <a class="buttonize" href="/users/login">Log In</a>
       <a class="buttonize" href="/posts">News Feed</a>
-      <a class="buttonize" href="/posts/new">New Post</a>
       <a class="buttonize" href="/users">See All Users</a>
     </div>
-    <form action="/users/login" method="POST">
-      User Name: <input type="text" name="userName" /> <br />
+
+    <form action="/posts" method="POST">
+      What's Up?
+      <input type="text" name="textContent" /><br />
       <br />
-      Password: <input type="text" name="password" /><br />
+      Picture (optional):
+      <input type="url" name="picture" /><br />
       <br />
-      <input type="submit" value="Login" />
+      User ID:
+      <input type="text" name="userId" /><br /><br />
+      <input type="submit" class="buttonize" value="Post" />
     </form>
   </body>
 </html>

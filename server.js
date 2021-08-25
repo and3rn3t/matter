@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 
 // Import controllers
 app.use("/users", require("./controllers/usersController.js"));
+app.use("/posts", require("./controllers/postsController.js"));
 
 app.listen(process.env.PORT, () => {
   console.log("I AM LISTENING TO YOU NOW!!!");

@@ -11,32 +11,28 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/app.css" />
-    <title>Monstr - Evil Profile</title>
+    <title>Monstr - News Feed</title>
   </head>
   <body>
-    <h1>Monster Profile - <%= user.fname %> <%= user.lname %></h1>
+    <h1>Monstr - News Feed</h1>
     <div class="actions">
       <a class="buttonize" href="/users/signup">Sign Up</a>
       <a class="buttonize" href="/users/login">Log In</a>
-      <a class="buttonize" href="/posts">News Feed</a>
       <a class="buttonize" href="/posts/new">New Post</a>
       <a class="buttonize" href="/users">See All Users</a>
     </div>
-    <br />
-    <h2><%= user.description %></h2>
-    <img class="profile" src="<%= user.profilePic %>" /><br />
-    <h2>Posts:</h2>
-    <% for (let i = 0; i < user.Posts.length; i++){ %>
-    <ul>
-      <li><%=user.Posts[i].textContent%></li>
+    <br /><br /><br />
+    <ul class="posts">
+      <% for( let i = 0; i < posts.length; i++ ) { %>
+      <li>
+        <a href="/posts/<%= posts[i].id %>/"
+          >View Post</a>
+          <h2><%= posts[i].textContent %></h2>
+          <img src="<%= posts[i].picture %>">
+        <br /><br />
+      </li>
+      <% } %>
     </ul>
     <br />
-    <img src="<%=user.Posts[i].picture%>" />
-    <br />
-    <% } %>
-
-    <br /><br />
-    <a href="/users/edit/<%=user.id%>">Edit</a>
-    <a href="/users">Back to Main</a>
   </body>
 </html>

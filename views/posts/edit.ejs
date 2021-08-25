@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monstr - Monster Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,10 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/app.css" />
-    <title>Monstr - Evil Profile</title>
   </head>
+
   <body>
-    <h1>Monster Profile - <%= user.fname %> <%= user.lname %></h1>
+    <h1>Edit Post</h1>
     <div class="actions">
       <a class="buttonize" href="/users/signup">Sign Up</a>
       <a class="buttonize" href="/users/login">Log In</a>
@@ -22,21 +22,22 @@
       <a class="buttonize" href="/posts/new">New Post</a>
       <a class="buttonize" href="/users">See All Users</a>
     </div>
-    <br />
-    <h2><%= user.description %></h2>
-    <img class="profile" src="<%= user.profilePic %>" /><br />
-    <h2>Posts:</h2>
-    <% for (let i = 0; i < user.Posts.length; i++){ %>
-    <ul>
-      <li><%=user.Posts[i].textContent%></li>
-    </ul>
-    <br />
-    <img src="<%=user.Posts[i].picture%>" />
-    <br />
-    <% } %>
-
-    <br /><br />
-    <a href="/users/edit/<%=user.id%>">Edit</a>
-    <a href="/users">Back to Main</a>
+    <form action="/posts/<%=posts.id%>?_method=PUT" method="POST">
+      What's Up?
+      <input
+        type="text"
+        name="textContent"
+        value="<%=posts.textContent%>"
+      /><br />
+      <br />
+      Picture (optional):
+      <input type="url" name="picture" value="<%= posts.picture %>" /><br />
+      <br />
+      <input type="submit" class="buttonize" value="Save Edit" />
+    </form>
+    <form action="/posts/<%= posts.id %>?_method=DELETE" method="POST">
+      <input class="buttonize" type="submit" value="Delete Post" />
+    </form>
+    <a class="buttonize" href="/posts">Back to News Feed</a>
   </body>
 </html>
