@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+// Import models
 const Users = require("../models").Users;
-// const Groups = require("../models").Group;
-// const Friendships = require("../models").Friendship;
 const Posts = require("../models").Posts;
 
 // GET Index route
@@ -50,7 +49,14 @@ router.post("/login", (req, res) => {
 
 // GET Friend Profile
 router.get("/:id", (req, res) => {
-  Users.findByPk(req.params.id).then((userProfile) => {
+  Users.findByPk(req.params.id, {
+    include: [
+      {
+        model: Posts,
+        attributes: ["textContent", "picture"],
+      },
+    ],
+  }).then((userProfile) => {
     res.render("users/show.ejs", {
       user: userProfile,
     });

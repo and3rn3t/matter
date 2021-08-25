@@ -3,9 +3,11 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.addColumn("Posts", "userId", {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
     });
   },
 
-  down: async (queryInterface, Sequelize) => {},
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.removeColumn("Posts", "userId");
+  },
 };

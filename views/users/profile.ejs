@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <h1>Welcome to <%= user.userId %>'s Profile Page</h1>
+    <h1>Welcome to <%= user.userName %>'s Profile Page</h1>
 
     <form action="/users/<%=user.id%>?_method=PUT" method="POST">
       First Name:
@@ -23,8 +23,8 @@
       Last Name:
       <input type="text" name="lname" value="<%=user.lname%>" /><br />
       <br />
-      User ID:
-      <input type="text" name="userId" value="<%=user.userId%>" /><br />
+      User Name:
+      <input type="text" name="userName" value="<%=user.userName%>" /><br />
       <br />
       Password:
       <input type="text" name="password" value="<%=user.password%>" /><br />
@@ -42,14 +42,13 @@
         value="<%=user.description%>"
       /><br />
       <br />
-      <input type="submit" value="Save Changes" />
+      <input type="submit" class="buttonize" value="Save Changes" />
     </form>
-    <br />
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete User" />
+      <input class="buttonize" type="submit" value="Delete Monster" />
     </form>
 
     <br /><br />
-    <a href="/users">Back to Homepage</a>
+    <a href="/users">Back to Monstr</a>
   </body>
 </html>
