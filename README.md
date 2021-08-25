@@ -1,76 +1,56 @@
-# Project Overview
-
+# SEI Project 2 - Monstr Social App
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+Monstr is a social media platform for those neglected by other sites (such as creeps, monsters, criminals and ghosts). Meet friends in the world of evil and keep up with your rivals.
 
 ## Project Links
 
-- [github repo](https://github.com/and3rn3t/monstr)
-- [Heroku Deployment](https://monstr-app.herokuapp.com)
+- [github public repository](https://github.com/and3rn3t/monstr)
+- [Heroku Deployment](https://monstr-app.herokuapp.com/users)
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+![Table relations](https://i.imgur.com/m3R2R49.jpg)
 
-- [wireframes]()
-- [react architecture]()
+## Technologies Used
 
-Define the the React components and the architectural design of your app.
+- node.js
+- PostgreSQL
+- VS Code
+- Sequelize
+- Heroku
 
-### MVP/PostMVP - 5 min
+## User Stories
+- As a **new user**, I want to make posts to my profile so that others can see what I've been up to.
+- As a **power user**, I want to create and belong to Groups so that I can make associations with like-minder monsters.
+- As a **group admin**, I want to moderate groups and group posts so that things don't get out of control.
+- As a **current user**, I want my data secured so that it cannot be leaked to other sites on the internet.
+- As a **current user**, I want to make posts with text and photos, so that others can see the pure evil I'm up to.
+- As a **group admin**, I want to change or delete group information, so that information is kept accurate only by admins.
+- As a **current user**, I want to connect with others so that I can see their posts.
+- As a **current user**, I want to change my own information, so that it is kept up to date.
+- As a **current user**, I want the ability to delete my own account to adhere to GDPR guidelines.
+- As a **new user**, I want to see who else is on the site, so that I can decide if I want to follow them.
+- As a **new user**, I want to add an account and my user information so that others can find me.
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+## MVP
 
-#### MVP EXAMPLE
 - Allow users to explore others' profile pages and sign up for their own
-- Permit users to post profile pictures on their page
-- Use Users and Posts models to show profiles and user's posts to others
-- Connect application to a PostgreSQL backend database
+- Permit users to post profile pictures on their own page
+- Use Users and Posts models to show profiles and user posts
+- Application persists changes to a PostgreSQL backend database
 
-#### PostMVP EXAMPLE
+## PostMVP (to be added later)
 
-- Enable secure login and browsing via encrypted passwords and JWT
-- Allow users to join groups and make posts to groups to which they belong
-
-## Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
-
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
-
-| Component | Description | 
-| --- | :---: |  
-| App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
-
-## Time Frames
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
-
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-
-## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
-
-## Code Snippet
-
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
-
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
+- (v2) Enable secure login and browsing via encrypted passwords and JWT
+- (v2) Allow users to join groups and make posts to groups to which they belong
+- (v2) Allow permission by friendship to see only certain profiles and posts
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: H10 Heroku Server Error                                
+**RESOLUTION**: Attempted to deploy to Heroku before instruction - hadn't created database. Created database.
+
+**PROBLEM**: Could not get Posts model in SHOW route                                
+**RESOLUTION**: Primary key UserId was being used in Posts<->Users relation, and Sequelize was confusing UserId for id. Renamed UserId to UserName and dropped/re-imported database.
