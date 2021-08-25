@@ -5,7 +5,7 @@ const router = express.Router();
 const Users = require("../models").Users;
 const Posts = require("../models").Posts;
 
-// GET Index route
+// GET Index
 router.get("/", (req, res) => {
   Users.findAll().then((user) => {
     res.render("users/index.ejs", {
@@ -14,24 +14,24 @@ router.get("/", (req, res) => {
   });
 });
 
-// GET Signup Route
+// GET Sign Up
 router.get("/signup", (req, res) => {
   res.render("users/signup.ejs");
 });
 
-// Signup POST route
+// POST Sign Up
 router.post("/", (req, res) => {
   Users.create(req.body).then((newUser) => {
     res.redirect("/users");
   });
 });
 
-// Login GET route
+// GET Login
 router.get("/login", (req, res) => {
   res.render("users/login.ejs");
 });
 
-// Login POST route
+// POST Login
 router.post("/login", (req, res) => {
   Users.findOne({
     where: {
@@ -47,7 +47,7 @@ router.post("/login", (req, res) => {
     });
 });
 
-// GET Friend Profile
+// GET Profile
 router.get("/:id", (req, res) => {
   Users.findByPk(req.params.id, {
     include: [
@@ -63,7 +63,7 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// GET Own Profile (Edit)
+// GET Profile (Edit)
 router.get("/edit/:id", (req, res) => {
   Users.findByPk(req.params.id).then((userProfile) => {
     res.render("users/profile.ejs", {
@@ -72,7 +72,7 @@ router.get("/edit/:id", (req, res) => {
   });
 });
 
-// PUT Own Profile Route (Edit)
+// PUT Profile (Edit)
 router.put("/:id", (req, res) => {
   Users.update(req.body, {
     where: { id: req.params.id },
@@ -82,7 +82,7 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// Delete User Profile Route
+// Delete Profile
 router.delete("/:id", (req, res) => {
   Users.destroy({ where: { id: req.params.id } }).then(() => {
     res.redirect("/users");
