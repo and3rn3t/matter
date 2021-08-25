@@ -20,11 +20,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Homepage
-app.get("/", (req, res) => {
-  res.render("users/index.ejs");
-});
-
 // Import controllers
 app.use("/users", require("./controllers/usersController.js"));
 
