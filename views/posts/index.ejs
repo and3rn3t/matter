@@ -25,10 +25,9 @@
     <ul class="posts">
       <% for( let i = 0; i < posts.length; i++ ) { %>
       <li>
-        <a href="/posts/<%= posts[i].id %>/"
-          >View Post</a>
-          <h2><%= posts[i].textContent %></h2>
-          <img src="<%= posts[i].picture %>">
+        <h2><%= posts[i].textContent %></h2>
+        <img src="<%= posts[i].picture %>" /><br /><br />
+        <a href="/posts/<%= posts[i].id %>/">View Post</a>
         <br /><br />
       </li>
       <% } %>

@@ -33,21 +33,34 @@
       <input type="text" name="userName" value="<%=user.userName%>" /><br />
       <br />
       Password:
-      <input type="text" name="password" value="<%=user.password%>" /><br />
-      <br />
-      Email Address:
-      <input type="text" name="email" value="<%=user.email%>" /><br />
-      <br />
-      Profile Picture:
-      <input type="url" name="profilePic" value="<%=user.profilePic%>" /><br />
-      <br />
-      About Me:
       <input
-        type="text"
-        name="description"
-        value="<%=user.description%>"
+        type="password"
+        name="password"
+        value="<%=user.password%>"
+        readonly
       /><br />
       <br />
+      Email Address:
+      <input
+        type="email"
+        name="email"
+        size="30"
+        value="<%=user.email%>"
+      /><br />
+      <br />
+      Profile Picture:
+      <input
+        type="url"
+        name="profilePic"
+        size="25"
+        value="<%=user.profilePic%>"
+      /><br />
+      <br />
+      About Me:
+      <textarea rows="5" cols="50" name="description">
+        <%=user.description%>
+      </textarea>
+      <br /><br />
       <input type="submit" class="buttonize" value="Save Changes" />
     </form>
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">

@@ -21,11 +21,11 @@
       <a class="buttonize" href="/users">See All Users</a>
     </div>
     <form action="/auth/login" method="POST">
-      User Name: <input type="text" name="userName" /> <br />
+      User Name: <input type="text" name="userName" required/> <br />
       <br />
-      Password: <input type="text" name="password" /><br />
+      Password: <input type="password" minlength="8" name="password" required/><br />
       <br />
-      <input type="submit" value="Login" />
+      <input type="submit" class="buttonize" value="Login" />
     </form>
   </body>
 </html>
