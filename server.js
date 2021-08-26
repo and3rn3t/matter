@@ -48,7 +48,7 @@ app.get("/", (req, res) => {
 // Import controllers
 app.use("/users", require("./controllers/usersController.js"));
 app.use("/posts", require("./controllers/postsController.js"));
-app.use("/auth", require("./controllers/authController.js"));
+app.use("/auth", verifyToken, require("./controllers/authController.js"));
 
 app.listen(process.env.PORT, () => {
   console.log("I AM LISTENING TO YOU NOW!!!");

@@ -36,7 +36,7 @@ router.post("/", (req, res) => {
               expiresIn: "30 days",
             }
           );
-          console.log(token);
+          console.log("Token:", token);
           res.cookie("jwt", token);
           console.log(err);
           res.send(`err ${err}`);
@@ -70,7 +70,7 @@ router.post("/login", (req, res) => {
               expiresIn: "30 days",
             }
           );
-          console.log(token);
+          console.log("Token:", token);
           res.cookie("jwt", token);
           res.redirect(`/users/${foundUser.id}`);
         } else {
