@@ -14,39 +14,6 @@ router.get("/", (req, res) => {
   });
 });
 
-// GET Sign Up
-router.get("/signup", (req, res) => {
-  res.render("users/signup.ejs");
-});
-
-// POST Sign Up
-router.post("/", (req, res) => {
-  Users.create(req.body).then((newUser) => {
-    res.redirect("/users");
-  });
-});
-
-// GET Login
-router.get("/login", (req, res) => {
-  res.render("users/login.ejs");
-});
-
-// POST Login
-router.post("/login", (req, res) => {
-  Users.findOne({
-    where: {
-      username: req.body.username,
-      password: req.body.password,
-    },
-  })
-    .then((loggedInPlayer) => {
-      res.redirect(`/users/${loggedInPlayer.id}`);
-    })
-    .catch((err) => {
-      res.redirect("/users");
-    });
-});
-
 // GET Profile
 router.get("/:id", (req, res) => {
   Users.findByPk(req.params.id, {
